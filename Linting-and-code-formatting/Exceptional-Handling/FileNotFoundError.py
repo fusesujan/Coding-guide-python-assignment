@@ -6,7 +6,7 @@ message if the file is not found.
 '''
 
 
-def read_file_check(filename: str) -> None:
+def read_file_check(filename) -> None:
     """
     Read and display the contents of the file.
 
