@@ -1,0 +1,3 @@
+[File Logger] Log message 1
+[File Logger] Log message 2
+[File Logger] Log message 3
