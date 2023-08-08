@@ -18,6 +18,7 @@ write the updated data back to the same file.
 import json
 import os
 
+
 def add_to_json(filename: str, new_dict: dict):
     """
     Add a new dictionary to a JSON file.
@@ -26,25 +27,27 @@ def add_to_json(filename: str, new_dict: dict):
         filename (str): Path to the JSON file.
         new_dict (dict): The dictionary to add to the JSON data.
     """
-    with open(filename, 'r') as json_file:
+    with open(filename, 'r', encoding='utf-8') as json_file:
         data = json.load(json_file)
         data.append(new_dict)
 
-    with open(filename, 'w') as json_output:
+    with open(filename, 'w', encoding='utf-8') as json_output:
         json.dump(data, json_output, indent=2)
+
 
 def main():
     """
     Test the add_to_json function with a sample JSON file.
     """
     script_directory = os.path.dirname(os.path.abspath(__file__))
-    filename = os.path.join(script_directory, "sample.json")
+    file_name = os.path.join(script_directory, "sample.json")
     new_data = {
         "name": "Shashank",
         "age": 25
     }
-    add_to_json(filename, new_data)
-    print(f"Updated JSON data written to '{filename}'.")
+    add_to_json(file_name, new_data)
+    print(f"Updated JSON data written to '{file_name}'.")
+
 
 if __name__ == "__main__":
     main()
