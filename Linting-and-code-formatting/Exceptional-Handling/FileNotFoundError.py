@@ -1,12 +1,11 @@
-'''
+"""
 Implement a program that takes user input for a filename, opens the file in read
 mode, and displays its contents. Handle the FileNotFoundError and display an error
 message if the file is not found.
+"""
 
-'''
 
-
-def read_file_check(filename) -> None:
+def read_file_check(filename: str) -> None:
     """
     Read and display the contents of the file.
 
@@ -17,7 +16,7 @@ def read_file_check(filename) -> None:
         FileNotFoundError: If the file is not found.
     """
     try:
-        with open(filename, 'r') as file:
+        with open(filename, 'r', encoding='utf-8') as file:
             contents = file.read()
             print(contents)
     except FileNotFoundError:
@@ -25,7 +24,7 @@ def read_file_check(filename) -> None:
 
 
 # Take user input for the filename
-filename = input("Enter the name of the file: ")
+file_name = input("Enter the name of the file: ")
 
 
-read_file_check(filename)
+read_file_check(file_name)

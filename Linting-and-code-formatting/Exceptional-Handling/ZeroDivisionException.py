@@ -21,16 +21,18 @@ def zero_division_errors(num1: int, num2: int) -> float:
         ZeroDivisionError: If the second number (divisor) is zero.
     """
     try:
-        result = num1 / num2
-        return result
-    except ZeroDivisionError:
-        raise ZeroDivisionError("Error: Division by zero exception occurs.")
+        result_value = num1 / num2
+        return result_value
+    except ZeroDivisionError as exc:
+        raise ZeroDivisionError(
+            "Error: Division by zero is not allowed.") from exc
+
 
 try:
-    num1 = int(input("Enter the first number: "))
-    num2 = int(input("Enter the second number: "))
+    num_1 = int(input("Enter the first number: "))
+    num_2 = int(input("Enter the second number: "))
 
-    result = zero_division_errors(num1, num2)
+    result = zero_division_errors(num_1, num_2)
     print(f"The result of division is: {result}")
 except ValueError:
     print("Error: Please enter valid integers.")

@@ -23,18 +23,20 @@ def divide_numbers(num1: int, num2: int) -> float:
     """
     if not isinstance(num1, int) or not isinstance(num2, int):
         raise ValueError("Error: Both numbers should be integers.")
-    
+
     try:
-        result = num1 / num2
-        return result
-    except ZeroDivisionError:
-        raise ZeroDivisionError("Error: Division by zero is not allowed.")
+        result_value = num1 / num2
+        return result_value
+    except ZeroDivisionError as exc:
+        raise ZeroDivisionError(
+            "Error: Division by zero is not allowed.") from exc
+
 
 try:
-    num1 = int(input("Enter the first number: "))
-    num2 = int(input("Enter the second number: "))
+    num_1 = int(input("Enter the first number: "))
+    num_2 = int(input("Enter the second number: "))
 
-    result = divide_numbers(num1, num2)
+    result = divide_numbers(num_1, num_2)
     print(f"The result of division is: {result}")
 except ValueError as e:
     print(e)
