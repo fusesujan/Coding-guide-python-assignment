@@ -1,3 +1,14 @@
+# Python Coding Guide Assignments
+
+### Table of Contents
+
+- [SOLID Principles](#solid-principles)
+- [Design patterns](#design-patterns)
+- [Python Coding Conventions](#python-coding-conventions)
+- [Unittest](#unittest)
+- [Debugging](#debugging)
+- [Linting and code formatting](#linting-and-code-formatting)
+
 ## SOLID Principles
 
 1. **Single Responsibility Principle (SRP):**
